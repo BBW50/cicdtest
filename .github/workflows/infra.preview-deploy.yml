@@ -58,8 +58,4 @@ jobs:
             -var 'password=${{ secrets.MYSQL_PASSWORD }}' \
             -input=false \
             -no-color \
-            -detailed-exitcode || exit_code=$?
-      - name: Terraform Planの結果確認
-        run: |
-          echo "Terraform plan exit code: $exit_code"
-        if: failure() || success()
+            -detailed-exitcode
